@@ -2,8 +2,7 @@
   <div class="input-group">
     <mat-form-field>
       <mat-label>Title</mat-label>
-      <input type="text" [value]="title" matInput placeholder="Task title" [formControl]="titleFormControl"
-             [errorStateMatcher]="matcher"/>
+      <input type="text" matInput placeholder="Task title" [formControl]="titleFormControl" [errorStateMatcher]="matcher"/>
       @if (titleFormControl.hasError('required')) {
         <mat-error>Title is <strong>required</strong></mat-error>
       }
@@ -11,11 +10,11 @@
 
     <mat-form-field>
       <mat-label>Description</mat-label>
-      <textarea type="text" [value]="description" matInput rows="3" placeholder="Task description"></textarea>
+      <textarea type="text" rows="3" matInput placeholder="Task description" [formControl]="descriptionFormControl"></textarea>
     </mat-form-field>
   </div>
 
-  <button type="submit" mat-fab aria-label="Icon button with a plus icon">
+  <button type="submit" [disabled]="!titleFormControl.valid" mat-fab aria-label="Icon button with a plus icon" (click)="createTask()">
     <mat-icon>add</mat-icon>
   </button>
 

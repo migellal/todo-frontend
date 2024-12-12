@@ -17,8 +17,11 @@ export class TodoRestService {
   }
 
   async createTask(title: string, description: string | undefined) {
-    console.log('create task', title, description);
     const task = new Task(-1, title, description);
     await firstValueFrom(this.http.post(this.apiUrl, task));
+  }
+
+  async deleteTask(id: number) {
+    await firstValueFrom(this.http.delete(`${this.apiUrl}/${id}`));
   }
 }

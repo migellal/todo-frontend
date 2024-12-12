@@ -20,7 +20,6 @@ export class AppComponent {
   ngOnInit() {
     this.dataService.getTasks().subscribe(tasks => {
       this.tasks = tasks;
-      console.log(tasks);
     });
   }
 }

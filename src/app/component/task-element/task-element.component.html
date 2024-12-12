@@ -1,9 +1,9 @@
-<section>
+<form>
   <div class="text-group">
     <h3> {{ task?.title }}</h3>
     <p> {{ task?.description }}</p>
   </div>
-  <button color="accent" type="submit" mat-fab aria-label="Icon button with a trash icon">
+  <button type="submit" mat-fab aria-label="Icon button with a trash icon" (click)="deleteTask()">
     <mat-icon>remove</mat-icon>
   </button>
-</section>
+</form>

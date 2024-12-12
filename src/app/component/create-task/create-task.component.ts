@@ -22,17 +22,17 @@ import {MatIcon} from '@angular/material/icon';
   styleUrl: './create-task.component.css'
 })
 export class CreateTaskComponent {
-  title: string = '';
-  description?: string = '';
-
   titleFormControl = new FormControl('', [Validators.required]);
+  descriptionFormControl = new FormControl('');
   matcher = new TitleErrorStateMatcher();
 
   constructor(public todoRestService: TodoRestService) {
   }
 
   async createTask() {
-    await this.todoRestService.createTask(this.title, this.description);
+    const title: string = this.titleFormControl.value || '';
+    const description: string | undefined = this.descriptionFormControl.value || undefined;
+    await this.todoRestService.createTask(title, description);
   }
 }
 
