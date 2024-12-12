@@ -1,59 +1,45 @@
-# Todo
+# Projekt
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.4.
+Projekt zawiera frontend do aplikacji todo do której [backend znajduje się tutaj](https://github.com/migellal/todo-backend).
 
-## Development server
+## [Demo video - kliknij tutaj](https://youtu.be/U58VoRQW_Es)
 
-To start a local development server, run:
+## Szczegóły techniczne
+Aplikacja napisana w Angularze z użyciem biblioteki Material.
 
-```bash
-ng serve
+
+## Usprawnienia
+Naprawienie i poprawienie testów to rzecz która zajął bym się w następnej kolejności. Kolejna rzecz to obsługa błędów http (np informacje o braku dostępu do serwera). Do tego jeśli liczba zadań byłaby długa można by pomyśleć na page'owaniem. 
+
+# Zadanie
+
+## Wymagania
+
+### User Story:
+Jako użytkownik, chcę mieć prostą aplikację do zarządzania zadaniami, która umożliwia dodawanie, usuwanie i przeglądanie zadań przez interfejs REST API.
+### Polecenie:
+Stwórz prostą aplikację do zarządzania zadaniami (to-do list) w Spring Boot, która posiada funkcje dodawania, usuwania i przeglądania zadań.
+### Wymagania:
 ```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+Backend:
+POST /tasks: Dodanie nowego zadania. Zadanie ma zawierać tytuł (minimum 3 znaki).
+GET /tasks: Pobieranie wszystkich zadań.
+DELETE /tasks/{id}: Usuwanie zadania po ID.
 ```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
+### Struktura zadania:
 ```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
+Każde zadanie powinno zawierać:
+Unikalne ID (np. generowane przy pomocy UUID).
+Tytuł (title) – tekst.
+Opis (description) – opcjonalny.
 ```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+### Testy:
 ```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
+Testy jednostkowe dla logiki dodawania i usuwania zadań (np. za pomocą JUnit)
 ```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Frontend
+```
+Utwórz prosty interfejs użytkownika (technologia dowolna):
+Pole tekstowe i przycisk „Dodaj”, które pozwolą użytkownikowi dodać nowe zadanie.
+Lista wyświetlająca wszystkie zadania z przyciskiem „Usuń” obok każdego zadania.
+```

@@ -22,7 +22,7 @@ import {MatIcon} from '@angular/material/icon';
   styleUrl: './create-task.component.css'
 })
 export class CreateTaskComponent {
-  titleFormControl = new FormControl('', [Validators.required]);
+  titleFormControl = new FormControl('', [Validators.required, Validators.minLength(3)]);
   descriptionFormControl = new FormControl('');
   matcher = new TitleErrorStateMatcher();
 

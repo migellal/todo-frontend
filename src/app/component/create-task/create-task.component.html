@@ -3,8 +3,8 @@
     <mat-form-field>
       <mat-label>Title</mat-label>
       <input type="text" matInput placeholder="Task title" [formControl]="titleFormControl" [errorStateMatcher]="matcher"/>
-      @if (titleFormControl.hasError('required')) {
-        <mat-error>Title is <strong>required</strong></mat-error>
+      @if (!titleFormControl.valid) {
+        <mat-error>Title should be at least <strong>3 characters</strong> long</mat-error>
       }
     </mat-form-field>
 

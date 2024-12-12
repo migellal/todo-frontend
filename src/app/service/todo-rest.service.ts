@@ -17,7 +17,7 @@ export class TodoRestService {
   }
 
   async createTask(title: string, description: string | undefined) {
-    const task = new Task(-1, title, description);
+    const task = new Task(undefined, title, description);
     await firstValueFrom(this.http.post(this.apiUrl, task));
   }
 
