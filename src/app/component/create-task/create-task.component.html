@@ -1,0 +1,22 @@
+<form>
+  <div class="input-group">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input type="text" [value]="title" matInput placeholder="Task title" [formControl]="titleFormControl"
+             [errorStateMatcher]="matcher"/>
+      @if (titleFormControl.hasError('required')) {
+        <mat-error>Title is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea type="text" [value]="description" matInput rows="3" placeholder="Task description"></textarea>
+    </mat-form-field>
+  </div>
+
+  <button type="submit" mat-fab aria-label="Icon button with a plus icon">
+    <mat-icon>add</mat-icon>
+  </button>
+
+</form>

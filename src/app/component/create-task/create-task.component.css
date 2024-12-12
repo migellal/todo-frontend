@@ -1,0 +1,23 @@
+form {
+  display: flex;
+  flex-direction: row;
+}
+
+mat-form-field {
+  margin: 10px 10px 0 0;
+}
+
+button {
+  margin: 10px 0 0 0;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 300px;
+}
+
+.mat-mdc-fab {
+  color: green;
+}
